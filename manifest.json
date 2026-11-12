@@ -1,0 +1,15 @@
+{
+  "name": "CRIS Character Link",
+  "version": "0.1.0",
+  "manifest_version": 1,
+  "description": "Vincule fichas do CRIS a tokens e exiba PV, SAN e PE.",
+  "author": "Projeto independente",
+  "icon": "./icons/icon.svg",
+  "action": {
+    "title": "CRIS Link",
+    "icon": "./icons/icon.svg",
+    "popover": "./index.html",
+    "width": 360,
+    "height": 560
+  }
+}

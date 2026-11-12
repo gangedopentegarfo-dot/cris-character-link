@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#171923">
+  <title>CRIS Character Link</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header><div class="mark">C</div><div><h1>CRIS Character Link</h1><p>Vinculação de personagem • Ordem Paranormal</p></div><span id="obr-status" class="status">Conectando…</span></header>
+    <section class="notice"><b>Versão inicial</b><p>Vincule um token e cadastre os valores da ficha. A leitura automática da conta CRIS ainda depende de uma API/exportação autorizada.</p></section>
+    <section class="panel">
+      <h2>1. Dados da ficha</h2>
+      <label>Nome do personagem<input id="character-name" placeholder="Ex.: Agente Silva"></label>
+      <label>Link da ficha CRIS (opcional)<input id="cris-url" placeholder="https://crisordemparanormal.com/..."></label>
+      <div class="grid3">
+        <label>PV atual<input id="pv" type="number" min="0" value="32"></label>
+        <label>PV máximo<input id="pv-max" type="number" min="1" value="40"></label>
+        <label>SAN atual<input id="san" type="number" min="0" value="18"></label>
+        <label>SAN máximo<input id="san-max" type="number" min="1" value="35"></label>
+        <label>PE atual<input id="pe" type="number" min="0" value="12"></label>
+        <label>PE máximo<input id="pe-max" type="number" min="1" value="20"></label>
+      </div>
+      <div class="actions"><button id="save" class="primary">Salvar dados</button><button id="import">Importar JSON</button><input id="json-file" type="file" accept=".json,application/json" hidden></div>
+      <p class="hint">Formato JSON aceito: {"name":"Agente","pv":32,"pvMax":40,"san":18,"sanMax":35,"pe":12,"peMax":20}</p>
+    </section>
+    <section class="panel">
+      <h2>2. Token selecionado</h2>
+      <p id="selection">Selecione um token na mesa e use o menu de contexto: “Vincular ficha CRIS”.</p>
+      <button id="bind" class="primary wide">Vincular ao token selecionado</button>
+      <button id="unbind" class="danger wide">Desvincular token selecionado</button>
+    </section>
+    <section class="panel">
+      <h2>3. Visualização</h2>
+      <label class="toggle"><input id="show-bars" type="checkbox" checked> Exibir barras no mapa</label>
+      <p class="hint">O botão de olho no menu do token alterna a exibição das barras daquele personagem.</p>
+    </section>
+    <footer id="message">Aguardando conexão com o Owlbear Rodeo…</footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
